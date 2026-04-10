@@ -8,6 +8,7 @@ import FontManager from "@components/features/FontManager.astro";
 import MusicManager from "@components/features/MusicManager.astro";
 import SakuraEffect from "@components/features/SakuraEffect.astro";
 import ConfigCarrier from "@components/layout/ConfigCarrier.astro";
+import Analytics from "@vercel/analytics/astro";
 
 import {
 	backgroundWallpaper,
@@ -98,6 +99,7 @@ const siteLang = lang.replace("_", "-");
 <html lang={siteLang} class="bg-(--page-bg) text-[14px] md:text-[16px]" data-wallpaper-mode={backgroundWallpaper.mode}>
   <head>
     <meta charset="UTF-8" />
+    <Analytics />
     {siteConfig.analytics?.googleAnalyticsId && (
             <GoogleAnalytics analyticsId={siteConfig.analytics.googleAnalyticsId} />
     )}
@@ -896,7 +898,7 @@ function disableAnimation() {
         const transparentMode = navbar.getAttribute("data-transparent-mode");
 
         if (transparentMode === "semifull") {
-          // 重新调用初始化函数来重新绑定滚动事件
+          // ��新调用初始化函数来重新绑定滚动事件
           if (
             typeof (window as any).initSemifullScrollDetection === "function"
           ) {
@@ -1330,7 +1332,7 @@ function disableAnimation() {
       !isPostPage ? widget.classList.add("hidden") : widget.classList.remove("hidden");
     });
 
-    // 组件可见性变化后，立即重算 sticky 间距，避免 swup 切页后残留旧间距
+    // 组��可见性变化后，立即重算 sticky 间距，避免 swup 切页后残留旧间距
     updateSidebarStickySpacing();
   }
 
