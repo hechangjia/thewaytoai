@@ -9,6 +9,7 @@ import MusicManager from "@components/features/MusicManager.astro";
 import SakuraEffect from "@components/features/SakuraEffect.astro";
 import ConfigCarrier from "@components/layout/ConfigCarrier.astro";
 import Analytics from "@vercel/analytics/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 
 import {
 	backgroundWallpaper,
@@ -100,6 +101,7 @@ const siteLang = lang.replace("_", "-");
   <head>
     <meta charset="UTF-8" />
     <Analytics />
+    <SpeedInsights />
     {siteConfig.analytics?.googleAnalyticsId && (
             <GoogleAnalytics analyticsId={siteConfig.analytics.googleAnalyticsId} />
     )}
